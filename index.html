@@ -8,11 +8,40 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Bools Catalogue" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Library</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header class="header">
+        <div class="container">
+          <div class="header-inner">
+            <a class="logo__link" href="/">
+              <div class="logo__img-wrapper">
+                <img
+                  src="/assets/icons/book.svg"
+                  alt="book"
+                  class="logo__img"
+                  width="20"
+                  height="20"
+                />
+              </div>
+              <div class="logo__text-wrapper">
+                <p class="logo__text">The Library</p>
+                <p class="logo__subtext">Discover your next favorite book</p>
+              </div>
+            </a>
+            <button class="header__theme-switcher"></button>
+          </div>
+        </div>
+      </header>
+    </div>
     <script type="module" src="/src/scripts/index.js"></script>
   </body>
 </html>
