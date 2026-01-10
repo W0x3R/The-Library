@@ -37,12 +37,15 @@
                 <p class="logo__subtext">Discover your next favorite book</p>
               </div>
             </a>
-            <button class="header__theme-switcher"></button>
+            <button
+              class="header__theme-switcher"
+              title="Switch theme"
+            ></button>
           </div>
         </div>
       </header>
       <div class="main">
-        <section class="library">
+        <section>
           <div class="container">
             <div class="library__inner">
               <h1 class="library__title">Discover Your Next Great Read</h1>
@@ -69,307 +72,523 @@
                   Search
                 </button>
               </form>
-              <div class="books-wrapper">
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
+              <div class="library__layout">
+                <div class="books-wrapper">
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button
+                        class="book__favorite-btn"
+                        title="Add to favorite"
+                      >
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button class="book__favorite-btn">
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button class="book__favorite-btn">
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button class="book__favorite-btn">
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button class="book__favorite-btn">
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button class="book__favorite-btn">
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button class="book__favorite-btn">
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button class="book__favorite-btn">
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button class="book__favorite-btn">
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                  <article class="book">
+                    <figure class="book__figure">
+                      <img
+                        class="book__banner"
+                        src="https://placehold.co/160x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                      />
+                      <figcaption class="book__description-wrapper">
+                        <h3 class="book__title">The Great Gatsby</h3>
+                        <p class="book__author">F.Scott Fitzgeraid</p>
+                        <p class="book__year">1925</p>
+                      </figcaption>
+                      <button class="book__favorite-btn">
+                        <svg
+                          class="book__favorite-img"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                            stroke="#7C736A"
+                            stroke-width="1.333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </figure>
+                  </article>
+                </div>
+                <aside class="favorites">
+                  <div class="favorites__heading">
+                    <div class="favorites__heading-logo-wrapper">
+                      <img
+                        src="/assets/icons/heart.svg"
+                        alt=""
                         width="16"
                         height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                        class="favorites__heading-logo"
+                      />
+                    </div>
+                    <div>
+                      <h3 class="favorites__heading-title">Favorites</h3>
+                      <p class="favorites__heading-subtitle">3 Books saved</p>
+                    </div>
+                  </div>
+                  <div class="favorites__books-wrapper">
+                    <article>
+                      <figure class="favorites__books-item">
+                        <img
+                          src="https://placehold.co/70x110?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                          alt=""
+                          class="favorites__books-banner"
                         />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                        <div class="favorites__books-description">
+                          <h4 class="favorites__books-title">The Hobbit</h4>
+                          <p class="favorites__books-author">J.R.R Tolken</p>
+                          <p class="favorites__books-year">1995</p>
+                        </div>
+                        <button
+                          class="favorites__books-btn"
+                          title="Remove from favorite"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            fill="red"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                              stroke-width="1.333"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </figure>
+                    </article>
+                    <article>
+                      <figure class="favorites__books-item">
+                        <img
+                          src="https://placehold.co/70x110?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                          alt=""
+                          class="favorites__books-banner"
                         />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                        <div class="favorites__books-description">
+                          <h4 class="favorites__books-title">The Hobbit</h4>
+                          <p class="favorites__books-author">J.R.R Tolken</p>
+                          <p class="favorites__books-year">1995</p>
+                        </div>
+                        <button
+                          class="favorites__books-btn"
+                          title="Remove from favorite"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            fill="red"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                              stroke-width="1.333"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </figure>
+                    </article>
+                    <article>
+                      <figure class="favorites__books-item">
+                        <img
+                          src="https://placehold.co/70x110?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                          alt=""
+                          class="favorites__books-banner"
                         />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                        <div class="favorites__books-description">
+                          <h4 class="favorites__books-title">The Hobbit</h4>
+                          <p class="favorites__books-author">J.R.R Tolken</p>
+                          <p class="favorites__books-year">1995</p>
+                        </div>
+                        <button
+                          class="favorites__books-btn"
+                          title="Remove from favorite"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            fill="red"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                              stroke-width="1.333"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </figure>
+                    </article>
+                    <article>
+                      <figure class="favorites__books-item">
+                        <img
+                          src="https://placehold.co/70x110?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                          alt=""
+                          class="favorites__books-banner"
                         />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                        <div class="favorites__books-description">
+                          <h4 class="favorites__books-title">The Hobbit</h4>
+                          <p class="favorites__books-author">J.R.R Tolken</p>
+                          <p class="favorites__books-year">1995</p>
+                        </div>
+                        <button
+                          class="favorites__books-btn"
+                          title="Remove from favorite"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            fill="red"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                              stroke-width="1.333"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </figure>
+                    </article>
+                    <article>
+                      <figure class="favorites__books-item">
+                        <img
+                          src="https://placehold.co/70x110?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                          alt=""
+                          class="favorites__books-banner"
                         />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                        <div class="favorites__books-description">
+                          <h4 class="favorites__books-title">The Hobbit</h4>
+                          <p class="favorites__books-author">J.R.R Tolken</p>
+                          <p class="favorites__books-year">1995</p>
+                        </div>
+                        <button
+                          class="favorites__books-btn"
+                          title="Remove from favorite"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            fill="red"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                              stroke-width="1.333"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </figure>
+                    </article>
+                    <article>
+                      <figure class="favorites__books-item">
+                        <img
+                          src="https://placehold.co/70x110?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
+                          alt=""
+                          class="favorites__books-banner"
                         />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
-                <article class="book">
-                  <figure class="book__figure">
-                    <img
-                      class="book__img"
-                      src="https://placehold.co/170x240?&font=oswald&text=%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE"
-                    />
-                    <figcaption class="book__description-wrapper">
-                      <h3 class="book__title">The Great Gatsby</h3>
-                      <p class="book__author">F.Scott Fitzgeraid</p>
-                      <p class="book__year">1925</p>
-                    </figcaption>
-                    <button class="book__favorite-btn">
-                      <svg
-                        class="book__favorite-img"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
-                          stroke="#7C736A"
-                          stroke-width="1.333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </figure>
-                </article>
+                        <div class="favorites__books-description">
+                          <h4 class="favorites__books-title">The Hobbit</h4>
+                          <p class="favorites__books-author">J.R.R Tolken</p>
+                          <p class="favorites__books-year">1995</p>
+                        </div>
+                        <button
+                          class="favorites__books-btn"
+                          title="Remove from favorite"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            fill="red"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z"
+                              stroke-width="1.333"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </figure>
+                    </article>
+                  </div>
+                </aside>
               </div>
             </div>
           </div>
