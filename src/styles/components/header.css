@@ -1,5 +1,4 @@
 /* Header styles start */
-
 .header {
   margin-bottom: 30px;
   border-bottom: 1px solid var(--border);
@@ -60,86 +59,4 @@
 .header__theme-switcher:hover {
   transform: scale(1.08);
 }
-
 /* Header styles end */
-
-/* Header tablets media styles start  */
-
-@media (max-width: 1024px) {
-  .header {
-    margin-bottom: 20px;
-  }
-}
-/* Header tablets media styles end  */
-
-/*Header big mobile media styles start  */
-@media (max-width: 768px) {
-  .header {
-    margin-bottom: 14px;
-  }
-
-  .header-inner {
-    margin-inline: 35px;
-  }
-
-  .logo__img-wrapper {
-    width: 25px;
-    height: 25px;
-  }
-
-  .logo__img {
-    width: 15px;
-    height: 15px;
-  }
-
-  .logo__text {
-    font-size: 14px;
-  }
-
-  .logo__subtext {
-    font-size: 12px;
-  }
-
-  .header__theme-switcher {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-/*Header big mobile media styles end  */
-
-/* Header small mobile media styles start */
-
-@media (max-width: 480px) {
-  .header {
-    margin-bottom: 10px;
-  }
-
-  .header-inner {
-    margin: 10px 20px;
-  }
-
-  .logo__img-wrapper {
-    width: 22px;
-    height: 22px;
-  }
-
-  .logo__img {
-    width: 13px;
-    height: 13px;
-  }
-
-  .logo__text {
-    font-size: 13px;
-  }
-
-  .logo__subtext {
-    font-size: 11px;
-  }
-
-  .header__theme-switcher {
-    width: 22px;
-    height: 22px;
-  }
-}
-/* Header small mobile media styles end */

@@ -1,0 +1,256 @@
+/* Library section styles start */
+.library__layout {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 20px;
+  min-width: 1248px;
+}
+
+.library__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.library__title {
+  margin-bottom: 15px;
+  font-size: 40px;
+  color: var(--title);
+}
+
+.library__subtitle {
+  margin-bottom: 15px;
+  max-width: 50%;
+  text-align: center;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.library__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+  width: min(1240px, 100%);
+  margin-bottom: 40px;
+}
+
+.library__form-wrapper {
+  position: relative;
+  width: 50%;
+}
+
+.library__form-input {
+  padding: 10px 55px;
+  width: 100%;
+  min-height: 34px;
+  border-radius: 5px;
+  border: var(--border);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.library__form-input::placeholder {
+  font-size: 15px;
+  color: var(--text);
+}
+
+.library__form-logo {
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.library__search-btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: var(--green);
+  color: var(--secondary);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.library__search-btn:hover {
+  opacity: 0.9;
+}
+/* Library section styles end */
+
+/* Books styles start */
+.books-wrapper {
+  display: none;
+  max-height: min-content;
+}
+
+.books-wrapper:where(.visible) {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-content: start;
+  gap: 25px;
+}
+
+.book {
+  display: flex;
+  justify-content: center;
+}
+
+.book__figure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 170px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: var(--card);
+  box-shadow: 0px 0px 9px 1px var(--shadow);
+}
+
+.book__banner {
+  width: 170px;
+  height: 240px;
+}
+
+.book__description-wrapper {
+  padding: 10px;
+}
+
+.book__description-wrapper > * {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.book__title {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: var(--title);
+}
+
+.book__author {
+  margin-bottom: 5px;
+}
+
+.book__author,
+.book__year {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.book__favorite-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--favorite);
+  border-radius: 50%;
+}
+
+.book__favorite-btn:hover .book__favorite-img > path {
+  stroke: var(--red);
+}
+
+.book__favorite-img {
+  width: 16px;
+  height: 16px;
+}
+
+.book__favorite-img > path {
+  transition: stroke 0.3s ease-in-out;
+}
+/* Books styles end */
+
+/* Favorites section styles start */
+.favorites {
+  position: sticky;
+  top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  max-height: min-content;
+  background: var(--white);
+}
+
+.favorites__heading {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.favorites__heading-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: var(--favorite);
+}
+
+.favorites__heading-title {
+  font-size: 16px;
+  color: var(--title);
+}
+
+.favorites__heading-subtitle {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.favorites__books-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.favorites__books-item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.favorites__books-banner {
+  width: 70px;
+  height: auto;
+}
+
+.favorites__books-description {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  margin-right: 50px;
+}
+
+.favorites__books-title {
+  font-size: 14px;
+  color: var(--title);
+}
+
+.favorites__books-author,
+.favorites__books-year {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.favorites__books-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--background);
+  }
+}
+/* Favorites section styles end */

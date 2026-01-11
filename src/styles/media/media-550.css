@@ -1,0 +1,29 @@
+/* Middle mobile media styles start */
+@media (max-width: 550px) {
+  /* Library section styles start */
+  .library__layout {
+    flex-direction: column;
+    row-gap: 40px;
+    min-width: 300px;
+  }
+
+  .favorites {
+    position: static;
+  }
+
+  .favorites__books-item {
+    justify-content: space-between;
+  }
+
+  .favorites__books-banner {
+    width: 60px;
+  }
+  /* Library section styles end */
+
+  /* Global styles start */
+  .error {
+    position: static;
+  }
+  /* Global styles end */
+}
+/* Middle mobile media styles end */

@@ -1,0 +1,87 @@
+/* Small mobile media styles start */
+@media (max-width: 480px) {
+  /* Header styles start */
+  .header {
+    margin-bottom: 10px;
+  }
+
+  .header-inner {
+    margin: 10px 20px;
+  }
+
+  .logo__img-wrapper {
+    width: 22px;
+    height: 22px;
+  }
+
+  .logo__img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .logo__text {
+    font-size: 13px;
+  }
+
+  .logo__subtext {
+    font-size: 11px;
+  }
+
+  .header__theme-switcher {
+    width: 22px;
+    height: 22px;
+  }
+  /* Header styles end */
+
+  /* Library section styles start */
+  .library__title {
+    margin-bottom: 10px;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .library__subtitle {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .library__form-input {
+    padding: 6px 32px;
+    min-height: 32px;
+    font-size: 14px;
+  }
+
+  .library__form-input::placeholder {
+    font-size: 12px;
+  }
+
+  .library__form-logo {
+    width: 16px;
+    height: 16px;
+  }
+
+  .library__search-btn {
+    padding-block: 10px;
+    font-size: 10px;
+  }
+
+  .book__favorite-btn {
+    right: 5px;
+    top: 5px;
+  }
+
+  .error__img {
+    margin-bottom: 2px;
+    width: 160px;
+  }
+
+  .error__heading {
+    font-size: 14px;
+  }
+
+  .error__subheading {
+    max-width: 65%;
+    font-size: 12px;
+  }
+}
+/* Small mobile media styles end */

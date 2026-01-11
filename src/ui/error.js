@@ -1,21 +1,19 @@
-const booksErrorEl = document.querySelector(".books__error");
-const booksErrorHeadingEl = booksErrorEl.querySelector(".books__error-heading");
-const booksErrorSubheadingEl = booksErrorEl.querySelector(
-  ".books__error-subheading"
-);
-const booksErrorImg = booksErrorEl.querySelector(".books__error-img");
+const errorEl = document.querySelector(".error");
+const errorHeadingEl = errorEl.querySelector(".error__heading");
+const errorSubheadingEl = errorEl.querySelector(".error__subheading");
+const errorImg = errorEl.querySelector(".error__img");
 
 export const setErrorData = ({ heading, subheading, imgSrc, alt }) => {
-  booksErrorHeadingEl.textContent = heading;
-  booksErrorSubheadingEl.textContent = subheading;
-  booksErrorImg.setAttribute("src", imgSrc);
-  booksErrorImg.setAttribute("alt", alt);
+  errorHeadingEl.textContent = heading;
+  errorSubheadingEl.textContent = subheading;
+  errorImg.setAttribute("src", imgSrc);
+  errorImg.setAttribute("alt", alt);
 };
 
 export const showError = () => {
-  booksErrorEl.classList.add("visible");
+  errorEl.classList.add("visible");
 };
 
 export const removeError = () => {
-  booksErrorEl.classList.remove("visible");
+  errorEl.classList.remove("visible");
 };

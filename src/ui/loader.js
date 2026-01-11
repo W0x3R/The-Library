@@ -1,9 +1,9 @@
-const booksLoaderEl = document.querySelector(".books__loader");
+const loaderEl = document.querySelector(".loader");
 
 export const showLoader = () => {
-  booksLoaderEl.classList.add("visible");
+  loaderEl.classList.add("visible");
 };
 
 export const removeLoader = () => {
-  booksLoaderEl.classList.remove("visible");
+  loaderEl.classList.remove("visible");
 };

@@ -1,0 +1,165 @@
+/* Big mobile media styles start */
+@media (max-width: 768px) {
+  /* Header styles start */
+  .header {
+    margin-bottom: 14px;
+  }
+
+  .header-inner {
+    margin-inline: 35px;
+  }
+
+  .logo__img-wrapper {
+    width: 25px;
+    height: 25px;
+  }
+
+  .logo__img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .logo__text {
+    font-size: 14px;
+  }
+
+  .logo__subtext {
+    font-size: 12px;
+  }
+
+  .header__theme-switcher {
+    width: 25px;
+    height: 25px;
+  }
+  /* Header styles end */
+
+  /* Library styles start */
+  .books-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .book__favorite-btn {
+    right: 8px;
+    top: 8px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .book__title {
+    font-size: 12px;
+  }
+
+  .book__author,
+  .book__year {
+    font-size: 10px;
+  }
+
+  .library__layout {
+    min-width: 504px;
+  }
+
+  .library__layout {
+    column-gap: 10px;
+  }
+
+  .library__title {
+    margin-bottom: 12px;
+    font-size: 30px;
+  }
+
+  .library__subtitle {
+    font-size: 13px;
+  }
+
+  .library__form {
+    margin-bottom: 28px;
+  }
+
+  .library__form-wrapper {
+    width: 60%;
+  }
+
+  .library__form-input {
+    font-size: 15px;
+    padding: 8px 45px;
+  }
+
+  .library__form-logo {
+    width: 18px;
+    height: 18px;
+  }
+
+  .library__search-btn {
+    padding: 10px 16px;
+    font-size: 11px;
+  }
+
+  .favorites {
+    padding: 6px;
+  }
+
+  .favorites__heading-title {
+    font-size: 14px;
+  }
+
+  .favorites__heading-subtitle {
+    font-size: 11px;
+  }
+
+  .favorites__heading-logo-wrapper {
+    margin-right: 8px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .favorites__heading {
+    padding-bottom: 6px;
+  }
+
+  .favorites__books-item {
+    column-gap: 8px;
+    padding: 6px;
+  }
+
+  .favorites__books-banner {
+    width: 55px;
+  }
+
+  .favorites__books-description {
+    margin-right: 10px;
+  }
+
+  .favorites__books-title {
+    font-size: 12px;
+  }
+
+  .favorites__books-author,
+  .favorites__books-year {
+    font-size: 10px;
+  }
+
+  .favorites__books-btn {
+    width: 26px;
+    height: 26px;
+  }
+  /* Library styles end */
+
+  .loader,
+  .error {
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .error__img {
+    width: 180px;
+  }
+
+  .error__heading {
+    font-size: 16px;
+  }
+
+  .error__subheading {
+    font-size: 14px;
+  }
+}
+/* Big mobile media styles end */
