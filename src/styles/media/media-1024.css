@@ -32,6 +32,10 @@
     font-size: 12px;
   }
 
+  .library__form-error {
+    font-size: 15px;
+  }
+
   .library__layout {
     column-gap: 15px;
   }
