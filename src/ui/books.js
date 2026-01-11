@@ -8,12 +8,13 @@ const bookTemplate = ({
 }) => {
   const article = document.createElement("article");
   article.className = "book";
-  const cover =
-    cover_i || "https://placehold.co/160x240?&font=oswald&text=No%20cover";
+  const bannerSrc = cover_i
+    ? `https://covers.openlibrary.org/b/id/${cover_i}.jpg`
+    : "https://placehold.co/160x240?&font=oswald&text=No%20cover";
   article.innerHTML = `
 
     <figure class="book__figure">
-      <img class="book__banner" src= https://covers.openlibrary.org/b/id/${cover}.jpg width="170" height="240" loading='lazy'>
+      <img class="book__banner" src=${bannerSrc} width="170" height="240" loading='lazy'>
       <figcaption class="book__description-wrapper">
         <h3 class="book__title">${title}</h3>
         <p class="book__author">${author}</p>
