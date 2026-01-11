@@ -1,5 +1,13 @@
 const booksContainer = document.querySelector(".books-wrapper");
 
+export const showBooks = () => {
+  booksContainer.classList.add("visible");
+};
+
+export const hideBooks = () => {
+  booksContainer.classList.remove("visible");
+};
+
 const bookTemplate = ({
   title,
   cover_i,
@@ -32,7 +40,7 @@ const bookTemplate = ({
 };
 
 export const renderBooks = (books) => {
-  booksContainer.classList.add("visible");
+  showBooks();
   booksContainer.innerHTML = "";
 
   const fragment = document.createDocumentFragment();

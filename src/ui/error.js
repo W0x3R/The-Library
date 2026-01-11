@@ -16,6 +16,6 @@ export const showError = () => {
   booksErrorEl.classList.add("visible");
 };
 
-const removeError = () => {
+export const removeError = () => {
   booksErrorEl.classList.remove("visible");
 };
