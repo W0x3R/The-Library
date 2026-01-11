@@ -7,6 +7,8 @@ export const getBooksByQuery = async (query) => {
     `${OPEN_LIBRARY_URL}?q=${encodeURIComponent(query)}`
   );
 
+  console.log(response);
+
   if (!response.ok) {
     throw new Error("SERVER_ERROR");
   }

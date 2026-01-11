@@ -44,7 +44,6 @@ export const renderBooks = (books) => {
 
   books.forEach((book) => {
     const normalizedBook = normalizeBook(book);
-    console.log(normalizedBook);
     const bookElement = bookTemplate(normalizedBook);
     fragment.appendChild(bookElement);
   });

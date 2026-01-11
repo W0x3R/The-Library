@@ -7,7 +7,7 @@ export const NO_RESULTS_ERROR = {
 
 export const NETWORK_ERROR = {
   heading: "Something went wrong.",
-  subheading: `Please check your internet connection and try again.`,
+  subheading: `Please try again.`,
   imgSrc: "/assets/images/error.png",
   alt: "Network error",
 };
