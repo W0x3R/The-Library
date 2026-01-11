@@ -4,10 +4,12 @@ import { hideBooks, renderBooks, showBooks } from "./books";
 import { removeError, setErrorData, showError } from "./error";
 import { removeLoader, showLoader } from "./loader";
 import { NETWORK_ERROR, NO_RESULTS_ERROR } from "../constants/error";
+import { debounce } from "../utils/debounce";
 
 const searchInputEl = document.querySelector(".library__form-input");
 const searchBtnEl = document.querySelector(".library__search-btn");
 const searchErrorEl = document.querySelector(".library__form-error");
+let controller;
 
 const toggleSearchBtn = (disabled) => {
   searchBtnEl.disabled = disabled;
@@ -24,14 +26,16 @@ const removeInputError = () => {
 };
 
 const searchBooks = async (query) => {
+  if (controller) controller.abort();
+  controller = new AbortController();
+
   showLoader();
   removeError();
   hideBooks();
   toggleSearchBtn(true);
 
   try {
-    const books = await getBooksByQuery(query);
-    console.log(books);
+    const books = await getBooksByQuery(query, controller.signal);
 
     if (!books || books.length === 0) {
       setErrorData(NO_RESULTS_ERROR);
@@ -42,6 +46,7 @@ const searchBooks = async (query) => {
     showBooks();
     renderBooks(books);
   } catch (error) {
+    if (error.name === "AbortError") return;
     setErrorData(NETWORK_ERROR);
     showError();
   } finally {
@@ -76,6 +81,7 @@ searchInputEl.addEventListener("keydown", (e) => {
     handleSearch();
   }
 });
+searchInputEl.addEventListener("input", debounce(handleSearch, 500));
 
 const initialQuery = getQueryUrl();
 

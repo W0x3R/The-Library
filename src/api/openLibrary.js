@@ -1,13 +1,12 @@
 const OPEN_LIBRARY_URL = "https://openlibrary.org/search.json";
 
-export const getBooksByQuery = async (query) => {
+export const getBooksByQuery = async (query, signal) => {
   if (!query) return [];
 
   const response = await fetch(
-    `${OPEN_LIBRARY_URL}?q=${encodeURIComponent(query)}`
+    `${OPEN_LIBRARY_URL}?q=${encodeURIComponent(query)}`,
+    { signal }
   );
-
-  console.log(response);
 
   if (!response.ok) {
     throw new Error("SERVER_ERROR");
