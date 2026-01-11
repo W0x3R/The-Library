@@ -1,0 +1,145 @@
+/* Header styles start */
+
+.header {
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 60px;
+}
+
+.logo__link {
+  display: flex;
+  align-items: center;
+}
+
+.logo__link:hover .logo__img {
+  transform: scale(1.08);
+}
+
+.logo__img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: var(--green);
+}
+
+.logo__img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo__text {
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: var(--title);
+  font-weight: bold;
+}
+
+.logo__subtext {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.header__theme-switcher {
+  width: 30px;
+  height: 30px;
+  background-image: url(/assets/icons/dark-theme-icon.svg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.header__theme-switcher:hover {
+  transform: scale(1.08);
+}
+
+/* Header styles end */
+
+/* Header tablets media styles start  */
+
+@media (max-width: 1024px) {
+  .header {
+    margin-bottom: 20px;
+  }
+}
+/* Header tablets media styles end  */
+
+/*Header big mobile media styles start  */
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 14px;
+  }
+
+  .header-inner {
+    margin-inline: 35px;
+  }
+
+  .logo__img-wrapper {
+    width: 25px;
+    height: 25px;
+  }
+
+  .logo__img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .logo__text {
+    font-size: 14px;
+  }
+
+  .logo__subtext {
+    font-size: 12px;
+  }
+
+  .header__theme-switcher {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/*Header big mobile media styles end  */
+
+/* Header small mobile media styles start */
+
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 10px;
+  }
+
+  .header-inner {
+    margin: 10px 20px;
+  }
+
+  .logo__img-wrapper {
+    width: 22px;
+    height: 22px;
+  }
+
+  .logo__img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .logo__text {
+    font-size: 13px;
+  }
+
+  .logo__subtext {
+    font-size: 11px;
+  }
+
+  .header__theme-switcher {
+    width: 22px;
+    height: 22px;
+  }
+}
+/* Header small mobile media styles end */
