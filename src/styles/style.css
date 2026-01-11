@@ -47,20 +47,43 @@ body {
   padding: 0 10px;
 }
 
-.books__loader {
+.books__loader,
+.books__error {
   display: none;
   min-width: 950px;
+  max-width: 950px;
+  color: var(--title);
 }
 
-.books__loader.visible {
+.books__loader:where(.visible),
+.books__error:where(.visible) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 10px;
+  row-gap: 8px;
+  position: sticky;
+  top: 10px;
+  max-height: min-content;
 }
 
 .books__loader-message {
   font-size: 20px;
+}
+
+.books__error-heading {
+  font-size: 22px;
+}
+
+.books__error-subheading {
+  max-width: 40%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.books__error-img {
+  margin-bottom: 5px;
+  width: 225px;
+  height: auto;
 }
 
 /* Global styles end */
@@ -402,8 +425,14 @@ body {
     max-width: 155px;
   }
 
-  .books__loader {
+  .books__loader,
+  .books__error {
     min-width: 695px;
+    max-width: 695px;
+  }
+
+  .books__error-img {
+    width: 215px;
   }
 
   /* Library section styles end */
@@ -473,8 +502,25 @@ body {
     column-gap: 15px;
   }
 
-  .books__loader {
+  .books__loader,
+  .books__error {
+    row-gap: 5px;
     min-width: 460px;
+    max-width: 460px;
+  }
+
+  .books__error-img {
+    margin-bottom: 4px;
+    width: 185px;
+  }
+
+  .books__error-heading {
+    font-size: 18px;
+  }
+
+  .books__error-subheading {
+    max-width: 65%;
+    font-size: 16px;
   }
 
   /* Library section styles end */
@@ -586,8 +632,22 @@ body {
     font-size: 10px;
   }
 
-  .books__loader {
+  .books__loader,
+  .books__error {
     min-width: 300px;
+    max-width: 300px;
+  }
+
+  .books__error-img {
+    width: 180px;
+  }
+
+  .books__error-heading {
+    font-size: 16px;
+  }
+
+  .books__error-subheading {
+    font-size: 14px;
   }
 
   /* Library section styles end */
@@ -654,7 +714,7 @@ body {
   /* Favorite books section styles start */
 
   .library__layout {
-    flex-direction: column-reverse;
+    flex-direction: column;
     row-gap: 40px;
   }
 
@@ -668,6 +728,10 @@ body {
 
   .favorites__books-banner {
     width: 60px;
+  }
+
+  .books__error {
+    position: static;
   }
 
   /* Favorite books section styles end */
@@ -748,6 +812,20 @@ body {
   .book__favorite-btn {
     right: 5px;
     top: 5px;
+  }
+
+  .books__error-img {
+    margin-bottom: 2px;
+    width: 160px;
+  }
+
+  .books__error-heading {
+    font-size: 14px;
+  }
+
+  .books__error-subheading {
+    max-width: 65%;
+    font-size: 12px;
   }
   /* Library section styles end */
 }
