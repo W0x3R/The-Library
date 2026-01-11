@@ -47,6 +47,22 @@ body {
   padding: 0 10px;
 }
 
+.books__loader {
+  display: none;
+  min-width: 950px;
+}
+
+.books__loader.visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.books__loader-message {
+  font-size: 20px;
+}
+
 /* Global styles end */
 
 /* Header styles start */
@@ -433,6 +449,10 @@ body {
     column-gap: 15px;
   }
 
+  .books__loader {
+    min-width: 460px;
+  }
+
   /* Library section styles end */
 
   /* Favorite books section styles start */
@@ -544,6 +564,10 @@ body {
   .book__author,
   .book__year {
     font-size: 10px;
+  }
+
+  .books__loader {
+    min-width: 300px;
   }
 
   /* Library section styles end */
