@@ -150,6 +150,11 @@
     max-width: 300px;
   }
 
+  .loader__img {
+    width: 45px;
+    height: 45px;
+  }
+
   .error__img {
     width: 180px;
   }

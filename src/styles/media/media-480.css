@@ -83,5 +83,13 @@
     max-width: 65%;
     font-size: 12px;
   }
+  /* Library section styles end */
+
+  /* Global styles start */
+  .loader__img {
+    width: 40px;
+    height: 40px;
+  }
+  /* Global styles end */
 }
 /* Small mobile media styles end */
