@@ -157,7 +157,9 @@ body {
 
 .library__layout {
   display: flex;
+  justify-content: flex-end;
   column-gap: 20px;
+  min-width: 1248px;
 }
 
 .library__inner {
@@ -412,6 +414,10 @@ body {
 @media (max-width: 1280px) {
   /* Library section styles start */
 
+  .library__layout {
+    min-width: 980px;
+  }
+
   .books-wrapper {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -462,6 +468,10 @@ body {
   /* Header styles end */
 
   /* Library section styles start */
+
+  .library__layout {
+    min-width: 724px;
+  }
 
   .library__title {
     font-size: 34px;
@@ -575,6 +585,10 @@ body {
   /* Header styles end */
 
   /* Library section styles start */
+
+  .library__layout {
+    min-width: 504px;
+  }
 
   .library__layout {
     column-gap: 10px;
@@ -716,6 +730,7 @@ body {
   .library__layout {
     flex-direction: column;
     row-gap: 40px;
+    min-width: 300px;
   }
 
   .favorites {
