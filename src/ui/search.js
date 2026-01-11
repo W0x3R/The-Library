@@ -3,7 +3,7 @@ import { getQueryUrl, setQueryUrl } from "../utils/url";
 import { hideBooks, renderBooks, showBooks } from "./books";
 import { removeError, setErrorData, showError } from "./error";
 import { removeLoader, showLoader } from "./loader";
-import { NO_RESULTS_ERROR } from "../constants/error";
+import { NETWORK_ERROR, NO_RESULTS_ERROR } from "../constants/error";
 
 const searchInputEl = document.querySelector(".library__form-input");
 const searchBtnEl = document.querySelector(".library__search-btn");
@@ -16,16 +16,19 @@ const searchBooks = async (query) => {
 
   try {
     const books = await getBooksByQuery(query);
+
     if (books.length === 0) {
       hideBooks();
       setErrorData(NO_RESULTS_ERROR);
       showError();
       return;
     }
+
     showBooks();
     renderBooks(books);
   } catch (error) {
-    console.log(error);
+    setErrorData(NETWORK_ERROR);
+    showError();
   } finally {
     removeLoader();
   }

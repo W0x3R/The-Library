@@ -4,3 +4,10 @@ export const NO_RESULTS_ERROR = {
   imgSrc: "/assets/images/not-found.webp",
   alt: "Books not found",
 };
+
+export const NETWORK_ERROR = {
+  heading: "Something went wrong.",
+  subheading: `Please check your internet connection and try again.`,
+  imgSrc: "/assets/images/error.png",
+  alt: "Network error",
+};
