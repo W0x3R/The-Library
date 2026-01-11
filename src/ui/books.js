@@ -1,3 +1,5 @@
+import { normalizeBook } from "../utils/normalizeBook";
+
 const booksContainer = document.querySelector(".books-wrapper");
 
 export const showBooks = () => {
@@ -8,16 +10,11 @@ export const hideBooks = () => {
   booksContainer.classList.remove("visible");
 };
 
-const bookTemplate = ({
-  title,
-  cover_i,
-  author_name: author,
-  first_publish_year: year,
-}) => {
+const bookTemplate = ({ title, author, year, coverId }) => {
   const article = document.createElement("article");
   article.className = "book";
-  const bannerSrc = cover_i
-    ? `https://covers.openlibrary.org/b/id/${cover_i}.jpg`
+  const bannerSrc = coverId
+    ? `https://covers.openlibrary.org/b/id/${coverId}.jpg`
     : "https://placehold.co/160x240?&font=oswald&text=No%20cover";
   article.innerHTML = `
 
@@ -46,8 +43,9 @@ export const renderBooks = (books) => {
   const fragment = document.createDocumentFragment();
 
   books.forEach((book) => {
-    console.log(book);
-    const bookElement = bookTemplate(book);
+    const normalizedBook = normalizeBook(book);
+    console.log(normalizedBook);
+    const bookElement = bookTemplate(normalizedBook);
     fragment.appendChild(bookElement);
   });
   booksContainer.appendChild(fragment);
