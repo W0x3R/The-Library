@@ -182,16 +182,16 @@
   fill: var(--red);
 }
 
-.book__favorite-btn:hover .book__favorite-img > path {
+.book__favorite-btn:hover .favorite__icon > path {
   stroke: var(--red);
 }
 
-.book__favorite-img {
+.favorite__icon {
   width: 16px;
   height: 16px;
 }
 
-.book__favorite-img > path {
+.favorite__icon > path {
   transition: stroke 0.3s ease-in-out;
 }
 /* Books styles end */
@@ -275,6 +275,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   width: 30px;
   height: 30px;
   border-radius: 50%;

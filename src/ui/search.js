@@ -1,6 +1,6 @@
 import { getBooksByQuery } from "../api/openLibrary";
 import { getQueryUrl, setQueryUrl } from "../utils/url";
-import { hideBooks, renderBooks, showBooks } from "./books";
+import { hideBooks, renderBooks, showBooks } from "./books/books";
 import { removeError, setErrorData, showError } from "./error";
 import { removeLoader, showLoader } from "./loader";
 import { NETWORK_ERROR, NO_RESULTS_ERROR } from "../constants/error";
