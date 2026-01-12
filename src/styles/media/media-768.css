@@ -96,6 +96,13 @@
 
   .favorites {
     padding: 6px;
+    min-width: 205px;
+    max-width: 205px;
+  }
+
+  .favorites__error:where(.visible) {
+    padding-top: 6px;
+    font-size: 14px;
   }
 
   .favorites__heading-title {
@@ -123,10 +130,6 @@
 
   .favorites__books-banner {
     width: 55px;
-  }
-
-  .favorites__books-description {
-    margin-right: 10px;
   }
 
   .favorites__books-title {
