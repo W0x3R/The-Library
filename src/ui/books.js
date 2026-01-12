@@ -4,9 +4,10 @@ const booksContainer = document.querySelector(".books-wrapper");
 const favoritesContainer = document.querySelector(".favorites__books-wrapper");
 const favoritesErrorEl = document.querySelector(".favorites__error");
 const favoritesCount = document.querySelector(".favorites__heading-subtitle");
+
 let rawBooks = [];
 let lastRenderedBooks = [];
-const favorites = [];
+const favorites = new Set();
 
 export const showBooks = () => {
   booksContainer.classList.add("visible");
@@ -15,6 +16,11 @@ export const showBooks = () => {
 export const hideBooks = () => {
   booksContainer.classList.remove("visible");
 };
+
+const isFavorite = (id) => favorites.has(id);
+
+const getBookDataById = (id) =>
+  lastRenderedBooks.find((book) => book.id === id);
 
 const bookTemplate = ({ id, title, author, year, coverId }) => {
   const article = document.createElement("article");
@@ -33,7 +39,9 @@ const bookTemplate = ({ id, title, author, year, coverId }) => {
         <p class="book__author">${author}</p>
         <p class="book__year">${year}</p>
       </figcaption>
-      <button class="book__favorite-btn ${isBookFavorite ? "favorite" : ""}">
+      <button class="book__favorite-btn ${
+        isBookFavorite ? "favorite" : ""
+      }" title="${isBookFavorite ? "Remove from favorite" : "Add to favorite"}">
         <svg class="book__favorite-img" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z" stroke="#7C736A" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -44,14 +52,14 @@ const bookTemplate = ({ id, title, author, year, coverId }) => {
   return article;
 };
 
-export const renderBooks = (books) => {
+const setBooks = (books) => {
   rawBooks = books;
   lastRenderedBooks = books.map(normalizeBook);
+};
 
+export const renderBooks = (books) => {
+  setBooks(books);
   showBooks();
-  if (favorites.length > 0) {
-    favoritesErrorEl.classList.remove("visible");
-  }
 
   booksContainer.innerHTML = "";
 
@@ -61,33 +69,21 @@ export const renderBooks = (books) => {
     const bookElement = bookTemplate(book);
     fragment.appendChild(bookElement);
   });
+
   booksContainer.appendChild(fragment);
 };
 
-const toggleFavorites = (book) => {
-  const index = favorites.findIndex((favorite) => favorite.id === book.id);
-
-  if (index === -1) {
-    favorites.push(book);
-  } else {
-    favorites.splice(index, 1);
-  }
-};
-
-const isFavorite = (id) => favorites.some((favorite) => favorite.id === id);
-
-const getBookDataById = (id) =>
-  lastRenderedBooks.find((book) => book.id === id);
+const toggleFavorites = (id) =>
+  favorites.has(id) ? favorites.delete(id) : favorites.add(id);
 
 booksContainer.addEventListener("click", (e) => {
   const favoriteBtn = e.target.closest(".book__favorite-btn");
   if (!favoriteBtn) return;
   const bookEl = favoriteBtn.closest(".book");
   const bookId = bookEl.dataset.id;
-  const book = getBookDataById(bookId);
 
-  toggleFavorites(book);
-  renderBooks(rawBooks);
+  toggleFavorites(bookId);
+  favoriteBtn.classList.toggle("favorite");
   renderFavorites();
 });
 
@@ -106,7 +102,7 @@ const favoriteBookTemplate = ({ id, title, author, year, coverId }) => {
           <p class="favorites__books-author">${author}</p>
           <p class="favorites__books-year">${year}</p>
         </div>
-        <button class="favorites__books-btn title="Remove from favorite">
+        <button class="favorites__books-btn" title="Remove from favorite">
           <svg width="16" height="16" fill="red" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
@@ -116,16 +112,21 @@ const favoriteBookTemplate = ({ id, title, author, year, coverId }) => {
   return article;
 };
 
+const updaterFavoritesUI = () => {
+  const isEmpty = favorites.size === 0;
+
+  favoritesErrorEl.classList.toggle("visible", isEmpty);
+  favoritesCount.textContent = `${favorites.size} Books saved`;
+};
+
 export const renderFavorites = () => {
-  if (!favorites || favorites.length === 0) {
-    favoritesErrorEl.classList.add("visible");
-  }
   favoritesContainer.innerHTML = "";
-  favoritesCount.textContent = `${favorites.length} Books saved`;
+  updaterFavoritesUI();
   const fragment = document.createDocumentFragment();
-  favorites.forEach((favoriteBook) => {
-    const favoriteBookEl = favoriteBookTemplate(favoriteBook);
-    fragment.appendChild(favoriteBookEl);
+  favorites.forEach((id) => {
+    const book = getBookDataById(id);
+    if (!book) return;
+    fragment.appendChild(favoriteBookTemplate(book));
   });
   favoritesContainer.appendChild(fragment);
 };
@@ -136,18 +137,10 @@ favoritesContainer.addEventListener("click", (e) => {
 
   const bookEl = btn.closest("article");
   const bookId = bookEl.dataset.id;
-  const book = getBookDataById(bookId);
 
-  toggleFavorites(book);
-  renderBooks(rawBooks);
+  toggleFavorites(bookId);
+  btn.classList.toggle("favorite");
   renderFavorites();
 });
 
 renderFavorites();
-
-if (!favorites || favorites.length === 0) {
-  favoritesErrorEl.classList.add("visible");
-} else {
-  favoritesErrorEl.classList.remove("visible");
-  renderFavorites();
-}
