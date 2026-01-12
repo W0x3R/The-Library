@@ -26,7 +26,7 @@ export const bookTemplate = (
     <figure class="book__figure">
       <img class="book__banner" src=${getBannerSrc(
         coverId
-      )} width="170" height="240" loading='lazy' alt=${title}>
+      )} width="170" height="240" loading='lazy' alt="${title}">
       <figcaption class="book__description-wrapper">
         <h3 class="book__title">${title}</h3>
         <p class="book__author">${author}</p>
