@@ -178,6 +178,10 @@
   border-radius: 50%;
 }
 
+.book__favorite-btn.favorite > svg {
+  fill: var(--red);
+}
+
 .book__favorite-btn:hover .book__favorite-img > path {
   stroke: var(--red);
 }
@@ -197,6 +201,8 @@
   position: sticky;
   top: 10px;
   padding: 10px;
+  min-width: 280px;
+  max-width: 280px;
   border-radius: 10px;
   max-height: min-content;
   background: var(--white);
@@ -278,4 +284,13 @@
     background-color: var(--background);
   }
 }
+
+.favorites__error {
+  display: none;
+}
+
+.favorites__error:where(.visible) {
+  display: block;
+}
+
 /* Favorites section styles end */
