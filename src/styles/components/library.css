@@ -288,20 +288,27 @@
 .favorites__books-title {
   font-size: 14px;
   color: var(--title);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .favorites__books-author,
 .favorites__books-year {
   font-size: 12px;
   color: var(--text);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .favorites__books-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
   background: #f1f1f1;
   border-radius: 50%;
 }
