@@ -9,7 +9,8 @@
     margin-inline: 35px;
   }
 
-  .logo__img-wrapper {
+  .logo__img-wrapper,
+  .header__theme-switcher {
     width: 25px;
     height: 25px;
   }
@@ -25,11 +26,6 @@
 
   .logo__subtext {
     font-size: 12px;
-  }
-
-  .header__theme-switcher {
-    width: 25px;
-    height: 25px;
   }
   /* Header styles end */
 

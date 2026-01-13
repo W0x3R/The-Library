@@ -12,6 +12,7 @@ body {
   background-color: var(--background);
   font-family: var(--font-family);
   letter-spacing: 0;
+  transition: background-color 0.2s linear;
 }
 
 .container {
@@ -30,12 +31,12 @@ body {
 
 .loader:where(.visible),
 .error:where(.visible) {
+  position: sticky;
+  top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 8px;
-  position: sticky;
-  top: 10px;
   max-height: min-content;
 }
 

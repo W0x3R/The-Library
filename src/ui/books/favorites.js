@@ -22,6 +22,7 @@ export const renderFavorites = () => {
   favorites.forEach((id) => {
     const book = getBookById(id);
     if (!book) return;
+
     fragment.appendChild(favoriteBookTemplate(book));
   });
 

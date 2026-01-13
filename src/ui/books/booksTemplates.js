@@ -7,9 +7,10 @@ const getBannerSrc = (coverId) => {
 const favoriteIcon = (isActive = false) => {
   return ` 
   <svg class="favorite__icon" width="16" height="16" fill="${
-    isActive ? "var(--red)" : "none"
+    isActive ? "var(--color-red)" : "none"
   }" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z" stroke="#7C736A" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12.667 9.333c.993-.973 2-2.14 2-3.666A3.667 3.667 0 0011 2c-1.173 0-2 .333-3 1.333C7 2.333 6.173 2 5 2a3.667 3.667 0 00-3.667 3.667c0 1.533 1 2.7 2 3.666L8 14l4.667-4.667z" stroke="#7C736A" 
+  } stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`;
 };
 
