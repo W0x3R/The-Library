@@ -12,7 +12,7 @@ export const isFavorite = (id) => favorites.has(id);
 
 export const toggleFavorites = (book) => {
   favorites.has(book.id) ? favorites.delete(book.id) : favorites.set(book.id, book);
-  saveFavoritesToStorage();
+  saveFavoritesToStorage(favorites);
 };
 
 export const renderFavorites = () => {
@@ -43,7 +43,7 @@ export const handleRemoveBookOnClick = (e) => {
   const bookId = bookEl.dataset.id;
   favorites.delete(bookId);
 
-  saveFavoritesToStorage();
+  saveFavoritesToStorage(favorites);
   syncBookFavoriteState(bookId);
   renderFavorites();
 };
