@@ -81,3 +81,10 @@ export const initSearchFromUrl = () => {
     searchBooks(initialQuery);
   }
 };
+
+export const handleKeydownSearch = (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    handleSearch();
+  }
+};

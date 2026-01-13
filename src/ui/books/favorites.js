@@ -1,28 +1,27 @@
-import { getBooks, syncBookFavoriteState } from "./books";
+import { loadFavoritesFromStorage, saveFavoritesToStorage } from "../../storage/favoritesStorage";
+import { syncBookFavoriteState } from "./books";
 import { favoriteBookTemplate } from "./booksTemplates";
 
-const favoritesContainer = document.querySelector(".favorites__books-wrapper");
+export const favoritesContainer = document.querySelector(".favorites__books-wrapper");
 const favoritesErrorEl = document.querySelector(".favorites__error");
 const favoritesCount = document.querySelector(".favorites__heading-subtitle");
 
-const favorites = new Set();
-
-const getBookById = (id) => getBooks().find((book) => book.id === id);
+const favorites = loadFavoritesFromStorage();
 
 export const isFavorite = (id) => favorites.has(id);
 
-export const toggleFavorites = (id) =>
-  favorites.has(id) ? favorites.delete(id) : favorites.add(id);
+export const toggleFavorites = (book) => {
+  favorites.has(book.id) ? favorites.delete(book.id) : favorites.set(book.id, book);
+  saveFavoritesToStorage();
+};
 
 export const renderFavorites = () => {
   favoritesContainer.innerHTML = "";
   updaterFavoritesUI();
+
   const fragment = document.createDocumentFragment();
 
-  favorites.forEach((id) => {
-    const book = getBookById(id);
-    if (!book) return;
-
+  favorites.forEach((book) => {
     fragment.appendChild(favoriteBookTemplate(book));
   });
 
@@ -36,14 +35,15 @@ const updaterFavoritesUI = () => {
   favoritesCount.textContent = `${favorites.size} Books saved`;
 };
 
-favoritesContainer.addEventListener("click", (e) => {
+export const handleRemoveBookOnClick = (e) => {
   const btn = e.target.closest(".favorites__books-btn");
   if (!btn) return;
 
   const bookEl = btn.closest("article");
   const bookId = bookEl.dataset.id;
+  favorites.delete(bookId);
 
-  toggleFavorites(bookId);
+  saveFavoritesToStorage();
   syncBookFavoriteState(bookId);
   renderFavorites();
-});
+};
