@@ -14,10 +14,7 @@ const favoriteIcon = (isActive = false) => {
   </svg>`;
 };
 
-export const bookTemplate = (
-  { id, title, author, year, coverId },
-  isFavorite
-) => {
+export const bookTemplate = ({ id, title, author, year, coverId }, isFavorite) => {
   const article = document.createElement("article");
   article.className = "book";
   article.dataset.id = id;
@@ -33,9 +30,9 @@ export const bookTemplate = (
         <p class="book__author">${author}</p>
         <p class="book__year">${year}</p>
       </figcaption>
-      <button class="book__favorite-btn ${
-        isBookFavorite ? "favorite" : ""
-      }" title="${isBookFavorite ? "Remove from favorite" : "Add to favorite"}">
+      <button class="book__favorite-btn ${isBookFavorite ? "favorite" : ""}" title="${
+    isBookFavorite ? "Remove from favorite" : "Add to favorite"
+  }">
         ${favoriteIcon()}
       </button>
     </figure>
