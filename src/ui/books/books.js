@@ -1,8 +1,8 @@
 import { normalizeBook } from "../../utils/normalizeBook";
 import { bookTemplate } from "./booksTemplates";
-import { isFavorite, renderFavorites, toggleFavorites } from "./favorites";
+import { isFavorite } from "./favorites";
 
-const booksContainer = document.querySelector(".books-wrapper");
+export const booksContainer = document.querySelector(".books-wrapper");
 
 let rawBooks = [];
 let lastRenderedBooks = [];
@@ -43,16 +43,3 @@ export const syncBookFavoriteState = (id) => {
   const btn = bookEl.querySelector(".book__favorite-btn");
   btn.classList.toggle("favorite", isFavorite(id));
 };
-
-booksContainer.addEventListener("click", (e) => {
-  const favoriteBtn = e.target.closest(".book__favorite-btn");
-  if (!favoriteBtn) return;
-  const bookEl = favoriteBtn.closest(".book");
-  const bookId = bookEl.dataset.id;
-
-  toggleFavorites(bookId);
-  syncBookFavoriteState(bookId);
-  renderFavorites();
-});
-
-renderFavorites();

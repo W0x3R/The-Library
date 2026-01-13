@@ -4,10 +4,9 @@ import { hideBooks, renderBooks, showBooks } from "./books/books";
 import { removeError, setErrorData, showError } from "./error";
 import { removeLoader, showLoader } from "./loader";
 import { NETWORK_ERROR, NO_RESULTS_ERROR } from "../constants/error";
-import { debounce } from "../utils/debounce";
 
-const searchInputEl = document.querySelector(".library__form-input");
-const searchBtnEl = document.querySelector(".library__search-btn");
+export const searchInputEl = document.querySelector(".library__form-input");
+export const searchBtnEl = document.querySelector(".library__search-btn");
 const searchErrorEl = document.querySelector(".library__form-error");
 let controller;
 
@@ -55,7 +54,7 @@ const searchBooks = async (query) => {
   }
 };
 
-const handleSearch = () => {
+export const handleSearch = () => {
   const query = searchInputEl.value.trim();
 
   if (!query) {
@@ -74,18 +73,11 @@ const handleSearch = () => {
   }
 };
 
-searchBtnEl.addEventListener("click", handleSearch);
-searchInputEl.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    handleSearch();
+export const initSearchFromUrl = () => {
+  const initialQuery = getQueryUrl();
+
+  if (initialQuery) {
+    searchInputEl.value = initialQuery;
+    searchBooks(initialQuery);
   }
-});
-searchInputEl.addEventListener("input", debounce(handleSearch, 500));
-
-const initialQuery = getQueryUrl();
-
-if (initialQuery) {
-  searchInputEl.value = initialQuery;
-  searchBooks(initialQuery);
-}
+};
