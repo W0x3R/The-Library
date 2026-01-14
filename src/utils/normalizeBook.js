@@ -1,3 +1,4 @@
+// Normalize raw book data from API to a consistent format
 export const normalizeBook = (book) => {
   return {
     id: book.key,

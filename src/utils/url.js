@@ -1,3 +1,4 @@
+// Utilities for reading and updating search query in the URL without page reload
 export const getQueryUrl = () => {
   const params = new URLSearchParams(window.location.search);
   return params.get("q");

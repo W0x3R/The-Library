@@ -11,9 +11,12 @@ import { removeError, setErrorData, showError } from "./error";
 import { removeLoader, showLoader } from "./loader";
 import { NETWORK_ERROR, NO_RESULTS_ERROR } from "../constants/error";
 
+// DOM elements
 export const searchInputEl = document.querySelector(".library__form-input");
 export const searchBtnEl = document.querySelector(".library__search-btn");
 const searchErrorEl = document.querySelector(".library__form-error");
+
+// AbortController to cancel previous search requests when a new search starts
 let controller;
 
 const toggleSearchBtn = (disabled) => {
@@ -30,6 +33,11 @@ const removeInputError = () => {
   searchErrorEl.classList.remove("visible");
 };
 
+/**
+ * Performs book search by query:
+ * Cancels previous request, shows loader, handles empty results & network errors
+ * @param {string} query
+ */
 const searchBooks = async (query) => {
   if (controller) controller.abort();
   controller = new AbortController();
@@ -82,6 +90,7 @@ export const handleSearch = () => {
   }
 };
 
+// Initialize search state from URL query on page load
 export const initSearchFromUrl = () => {
   const initialQuery = getQueryUrl();
 

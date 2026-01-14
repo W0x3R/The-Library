@@ -2,6 +2,7 @@ import { loadFavoritesFromStorage, saveFavoritesToStorage } from "../../storage/
 import { syncBookFavoriteState } from "./books";
 import { favoriteBookTemplate } from "./booksTemplates";
 
+// DOM elements
 export const favoritesContainer = document.querySelector(".favorites__books-wrapper");
 const favoritesErrorEl = document.querySelector(".favorites__error");
 const favoritesCount = document.querySelector(".favorites__heading-subtitle");
@@ -15,9 +16,17 @@ export const toggleFavorites = (book) => {
   saveFavoritesToStorage(favorites);
 };
 
+// Update counter and error visibility
+const updateFavoritesUI = () => {
+  const isEmpty = favorites.size === 0;
+
+  favoritesErrorEl.classList.toggle("visible", isEmpty);
+  favoritesCount.textContent = `${favorites.size} Books saved`;
+};
+
 export const renderFavorites = () => {
   favoritesContainer.innerHTML = "";
-  updaterFavoritesUI();
+  updateFavoritesUI();
 
   const fragment = document.createDocumentFragment();
 
@@ -28,13 +37,7 @@ export const renderFavorites = () => {
   favoritesContainer.appendChild(fragment);
 };
 
-const updaterFavoritesUI = () => {
-  const isEmpty = favorites.size === 0;
-
-  favoritesErrorEl.classList.toggle("visible", isEmpty);
-  favoritesCount.textContent = `${favorites.size} Books saved`;
-};
-
+// Remove a book from favorites and sync state with main book list
 export const handleRemoveBookOnClick = (e) => {
   const btn = e.target.closest(".favorites__books-btn");
   if (!btn) return;

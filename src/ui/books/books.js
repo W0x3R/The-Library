@@ -4,10 +4,12 @@ import { removeError, setErrorData, showError } from "../error";
 import { bookTemplate } from "./booksTemplates";
 import { isFavorite, renderFavorites, toggleFavorites } from "./favorites";
 
+// DOM elements
 export const booksContainer = document.querySelector(".books-wrapper");
 export const authorFilterContainer = document.querySelector(".library__author-wrapper");
 export const authorFilterInputEl = authorFilterContainer.querySelector(".library__author-input");
 
+// State
 let rawBooks = [];
 let lastRenderedBooks = [];
 let authorFilter = "";
@@ -22,18 +24,14 @@ export const hideBooks = () => {
   booksContainer.classList.remove("visible");
 };
 
+// Save raw books and normalize them
 const setBooks = (books) => {
   rawBooks = books;
   lastRenderedBooks = books.map(normalizeBook);
 };
 
-export const showAuthorInput = () => {
-  authorFilterContainer.classList.add("visible");
-};
-
-export const removeAuthorInput = () => {
-  authorFilterContainer.classList.remove("visible");
-};
+export const showAuthorInput = () => authorFilterContainer.classList.add("visible");
+export const removeAuthorInput = () => authorFilterContainer.classList.remove("visible");
 
 const filterByAuthor = (books, author) => {
   if (!author) {
@@ -51,6 +49,10 @@ export const resetAuthorFilter = () => {
   authorFilterInputEl.value = "";
 };
 
+/**
+ * Returns books filtered by current author filter.
+ * Shows/hides books and error messages if needed.
+ */
 const getFilteredBooks = () => {
   const filteredBooksByAuthor = filterByAuthor(rawBooks, authorFilter);
   if (!filteredBooksByAuthor || filteredBooksByAuthor.length === 0) {
@@ -82,6 +84,7 @@ export const renderBooksFromSearch = (books) => {
   renderBooks(getFilteredBooks());
 };
 
+// Sync favorite state of a book in the DOM
 export const syncBookFavoriteState = (id) => {
   const bookEl = booksContainer.querySelector(`article[data-id="${id}"]`);
   const btn = bookEl.querySelector(".book__favorite-btn");

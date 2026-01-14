@@ -1,9 +1,17 @@
+/**
+ * Returns the URL for the book cover.
+ * If no coverId is provided, returns a placeholder image.
+ */
 const getBannerSrc = (coverId) => {
   return coverId
     ? `https://covers.openlibrary.org/b/id/${coverId}.jpg`
     : `https://placehold.co/170x140?&font=oswald&text=No%20cover`;
 };
 
+/**
+ * Returns an SVG string for the favorite icon.
+ * @param {boolean} isActive - whether the icon should be filled (favorite)
+ */
 const favoriteIcon = (isActive = false) => {
   return ` 
   <svg class="favorite__icon" width="16" height="16" fill="${
@@ -14,6 +22,11 @@ const favoriteIcon = (isActive = false) => {
   </svg>`;
 };
 
+/**
+ * Creates a DOM element for a book in the main library list.
+ * @param {object} book - book data
+ * @param {function} isFavorite - function to check if the book is favorite
+ */
 export const bookTemplate = ({ id, title, author, year, coverId }, isFavorite) => {
   const article = document.createElement("article");
   article.className = "book";
@@ -41,6 +54,9 @@ export const bookTemplate = ({ id, title, author, year, coverId }, isFavorite) =
   return article;
 };
 
+/**
+ * Creates a DOM element for a book in the favorites list
+ */
 export const favoriteBookTemplate = ({ id, title, author, year, coverId }) => {
   const article = document.createElement("article");
   article.dataset.id = id;
