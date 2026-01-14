@@ -1,6 +1,12 @@
 import { getBooksByQuery } from "../api/openLibrary";
 import { getQueryUrl, setQueryUrl } from "../utils/url";
-import { hideBooks, renderBooks, showBooks } from "./books/books";
+import {
+  hideBooks,
+  removeAuthorInput,
+  renderBooksFromSearch,
+  resetAuthorFilter,
+  showAuthorInput,
+} from "./books/books";
 import { removeError, setErrorData, showError } from "./error";
 import { removeLoader, showLoader } from "./loader";
 import { NETWORK_ERROR, NO_RESULTS_ERROR } from "../constants/error";
@@ -37,15 +43,18 @@ const searchBooks = async (query) => {
     const books = await getBooksByQuery(query, controller.signal);
 
     if (!books || books.length === 0) {
+      removeAuthorInput();
       setErrorData(NO_RESULTS_ERROR);
       showError();
       return;
     }
 
-    showBooks();
-    renderBooks(books);
+    resetAuthorFilter();
+    renderBooksFromSearch(books);
+    showAuthorInput();
   } catch (error) {
     if (error.name === "AbortError") return;
+    removeAuthorInput();
     setErrorData(NETWORK_ERROR);
     showError();
   } finally {

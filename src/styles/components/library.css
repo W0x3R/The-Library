@@ -94,6 +94,14 @@
   opacity: 0.9;
 }
 
+.library__author-wrapper {
+  display: none;
+}
+
+.library__author-wrapper.visible {
+  display: block;
+}
+
 .library__form-error {
   font-size: 16px;
   visibility: hidden;
@@ -205,10 +213,10 @@
   min-width: 280px;
   max-width: 280px;
   max-height: 95vh;
-  border-radius: 10px;
-  overflow-y: auto;
-  background: var(--favorite-bg);
   height: 100%;
+  overflow-y: auto;
+  border-radius: 10px;
+  background: var(--favorite-bg);
 }
 
 .favorites::-webkit-scrollbar {

@@ -1,11 +1,16 @@
+import { NO_AUTHOR_RESULTS_ERROR } from "../../constants/error";
 import { normalizeBook } from "../../utils/normalizeBook";
+import { removeError, setErrorData, showError } from "../error";
 import { bookTemplate } from "./booksTemplates";
 import { isFavorite, renderFavorites, toggleFavorites } from "./favorites";
 
 export const booksContainer = document.querySelector(".books-wrapper");
+export const authorFilterContainer = document.querySelector(".library__author-wrapper");
+export const authorFilterInputEl = authorFilterContainer.querySelector(".library__author-input");
 
 let rawBooks = [];
 let lastRenderedBooks = [];
+let authorFilter = "";
 
 export const getBooks = () => lastRenderedBooks;
 
@@ -22,20 +27,59 @@ const setBooks = (books) => {
   lastRenderedBooks = books.map(normalizeBook);
 };
 
-export const renderBooks = (books) => {
-  setBooks(books);
-  showBooks();
+export const showAuthorInput = () => {
+  authorFilterContainer.classList.add("visible");
+};
 
+export const removeAuthorInput = () => {
+  authorFilterContainer.classList.remove("visible");
+};
+
+const filterByAuthor = (books, author) => {
+  if (!author) {
+    return books;
+  }
+
+  const value = author.toLowerCase();
+  return books.filter((book) =>
+    book.author_name?.some((name) => name.toLowerCase().includes(value))
+  );
+};
+
+export const resetAuthorFilter = () => {
+  authorFilter = "";
+  authorFilterInputEl.value = "";
+};
+
+const getFilteredBooks = () => {
+  const filteredBooksByAuthor = filterByAuthor(rawBooks, authorFilter);
+  if (!filteredBooksByAuthor || filteredBooksByAuthor.length === 0) {
+    hideBooks();
+    setErrorData(NO_AUTHOR_RESULTS_ERROR);
+    showError();
+    return filterByAuthor(rawBooks, authorFilter);
+  }
+  removeError();
+  showBooks();
+  return filterByAuthor(rawBooks, authorFilter);
+};
+
+const renderBooks = (books) => {
   booksContainer.innerHTML = "";
 
   const fragment = document.createDocumentFragment();
 
-  lastRenderedBooks.forEach((book) => {
+  books.map(normalizeBook).forEach((book) => {
     const bookElement = bookTemplate(book, isFavorite);
     fragment.appendChild(bookElement);
   });
 
   booksContainer.appendChild(fragment);
+};
+
+export const renderBooksFromSearch = (books) => {
+  setBooks(books);
+  renderBooks(getFilteredBooks());
 };
 
 export const syncBookFavoriteState = (id) => {
@@ -56,4 +100,9 @@ export const handleBooksActionsOnClick = (e) => {
   toggleFavorites(book);
   syncBookFavoriteState(bookId);
   renderFavorites();
+};
+
+export const handleAuthorFilter = (e) => {
+  authorFilter = e.target.value;
+  renderBooks(getFilteredBooks());
 };
