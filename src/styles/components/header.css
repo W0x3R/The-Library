@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.logo__link:focus-visible {
+  outline: 2px solid var(--border);
+}
+
 .logo__link:hover .logo__img {
   transform: scale(1.08);
 }
@@ -58,5 +62,8 @@
 
 .header__theme-switcher:hover {
   transform: scale(1.08);
+}
+.header__theme-switcher:focus-visible {
+  outline: 2px solid var(--border);
 }
 /* Header styles end */

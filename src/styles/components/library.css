@@ -50,13 +50,20 @@
   min-height: 34px;
   border-radius: 5px;
   border: var(--border);
+  outline: none;
+  outline: #f1f1f1;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  transition: outline 0.1s ease-in-out;
 }
 
 .library__form-input.invalid {
-  border: 1px solid var(--color-red);
+  outline: 1px solid var(--color-red);
+}
+
+.library__form-input:focus-visible {
+  outline: 2px solid var(--color-green);
 }
 
 .library__form-input::placeholder {
@@ -81,6 +88,10 @@
   color: var(--secondary);
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
+}
+
+.library__search-btn:focus-visible {
+  outline: 2px solid yellow;
 }
 
 .library__search-btn:disabled {
@@ -189,6 +200,10 @@
 .book__favorite-btn.favorite * {
   fill: var(--color-red);
   stroke: var(--color-red);
+}
+
+.book__favorite-btn:focus-visible {
+  outline: 3px solid var(--color-green);
 }
 
 .book__favorite-btn:hover .favorite__icon > path {
@@ -319,6 +334,10 @@
   height: 24px;
   background: #f1f1f1;
   border-radius: 50%;
+}
+
+.favorites__books-btn:focus-visible {
+  outline: 2px solid yellow;
 }
 
 .favorite__icon {
