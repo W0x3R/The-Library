@@ -75,6 +75,7 @@ export const handleSearch = () => {
   const query = searchInputEl.value.trim();
 
   if (!query) {
+    removeAuthorInput();
     removeError();
     hideBooks();
     showInputError();
