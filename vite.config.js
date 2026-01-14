@@ -1,16 +1,8 @@
 import { defineConfig } from "vite";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-import htmlMinifier from "vite-plugin-html-minifier";
 
 export default defineConfig({
-  plugins: [
-    cssInjectedByJsPlugin(),
-    htmlMinifier({
-      collapseWhitespace: true,
-      removeComments: true,
-      minifyCSS: true,
-    }),
-  ],
+  plugins: [cssInjectedByJsPlugin()],
   build: {
     outDir: "dist",
     assetsDir: "assets",
@@ -22,7 +14,6 @@ export default defineConfig({
       output: {
         entryFileNames: "main.js",
         assetFileNames: "assets/[name][extname]",
-        manualChunks: undefined,
       },
     },
   },
