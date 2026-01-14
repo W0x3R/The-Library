@@ -87,6 +87,7 @@ export const renderBooksFromSearch = (books) => {
 // Sync favorite state of a book in the DOM
 export const syncBookFavoriteState = (id) => {
   const bookEl = booksContainer.querySelector(`article[data-id="${id}"]`);
+  if (!bookEl) return;
   const btn = bookEl.querySelector(".book__favorite-btn");
   btn.classList.toggle("favorite", isFavorite(id));
 };
