@@ -1,5 +1,9 @@
 # The Library App
 
+## Deploy
+
+[Live Demo](https://w0x3r.github.io/The-Library/)
+
 ## Task
 
 The task description is available at: [Open task](https://drive.google.com/file/d/1RBRcuH-_oAvtjem5Xs0c4NXZ8I38aYyH/view)
@@ -71,6 +75,7 @@ src/
 ```
 
 ### Notes
+
 - The app is built using Vite.
 - CSS is bundled and injected via JavaScript to meet the build requirements.
 - The app uses the Open Library API to fetch book data.
