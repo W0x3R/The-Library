@@ -1,20 +1,24 @@
+import notFoundImg from '/assets/icons/not-found.svg'
+import errorImg from '/assets/icons/error.svg'
+import notFoundAuthorImg from '/assets/icons/not-found-author.svg'
+
 export const NO_RESULTS_ERROR = {
   heading: "No results found.",
   subheading: `We can't find books matching your search. Please try a different query.`,
-  imgSrc: "/assets/icons/not-found.svg",
+  imgSrc: notFoundImg,
   alt: "Books not found",
 };
 
 export const NETWORK_ERROR = {
   heading: "Something went wrong.",
   subheading: `Please try again.`,
-  imgSrc: "/assets/icons/error.svg",
+  imgSrc: errorImg,
   alt: "Network error",
 };
 
 export const NO_AUTHOR_RESULTS_ERROR = {
   heading: "No books found for this author.",
   subheading: `Please try another name.`,
-  imgSrc: "/assets/icons/not-found-author.svg",
+  imgSrc: notFoundAuthorImg,
   alt: "No books found for this author",
 };
